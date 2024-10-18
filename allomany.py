@@ -46,6 +46,11 @@ for sz in egyediSzo:
 
 plt.bar(egyediSzo,result)
 plt.xticks(rotation=90)
+plt.ylim([0,35])
+plt.xlim([20,50])
+plt.title("Szavak eloszlása")
+plt.ylabel("Egy adott szó száma")
+plt.xlabel("Az elemzett szöveg szavai")
 plt.show()
 
 '''
