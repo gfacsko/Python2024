@@ -1,4 +1,4 @@
-# Buborékrendezés Python program
+# Kiválasztás Python program
 # Developed by Dr. Gabor FACSKO (facskog@gamma.ttk.pte.hu)
 # University of Pecs, Faculty of Science, Pecs, Hungary, 2024
 # ------------------------------------------------------------
@@ -7,36 +7,40 @@ import random as rd
 
 # ------------------------------------------------------------
 
-def feltoltes(N,minN,maxN):
+def feltoltes(N,minV,maxV):
     a = []
     # A tömb feltöltése véletlen számokkal (minN és maxN közötti értékekkel)
     for i in range(N):
-        a.append(rd.randint(minN,maxN))
+        a.append(rd.randint(minV,maxV))
     return(a)
 
-# ------------------------------------------------------------
-
-
-def buborekRendezes(a):
-    for i in range(len(a)-1,1,-1):
-        for j in range(0,i):
-            if (a[j]>a[j+1]):
-                a[j],a[j+1]=a[j+1],a[j]
-
-    return (a)
 
 # ------------------------------------------------------------
 
+# Kiválaszt bizonyos tulajdonságú elemeket
+# Kiválasztja az 50-nél kisebb elemek
+def kivalasztas(a):
+    # Kiválasztja az 50-nél kisebb elemeket
+    kuszob = 50
+    b =[]
+    # Ciklus
+    for e in a:
+        if (e < kuszob):
+            b.append(e)
+
+    return (b)
+
+# ------------------------------------------------------------
 
 # Az a tömb (lista)
 # Minimális szám
-minN = 0
+minV = 0
 # Maximális szám
-maxN = 100
+maxV = 100
 # A tömb feltöltése
 N = 20 # Tömb elemeinek a száma
 # A tömb (lista)
-a=feltoltes(N,minN,maxN)
+a=feltoltes(N,minV,maxV)
 
 # -------------------------------------------------------------------------
 
@@ -45,10 +49,5 @@ print("A tömb elemei:",a)
 
 # -------------------------------------------------------------------------
 
-# Meghívom a buborék rendezést
-a = buborekRendezes(a)
-
-# -------------------------------------------------------------------------
-
 # Kiírom az eredményt
-print("A tömb maximális eleme és annak indexe: ", a)
+print("A tömb 50-nél kisebb elemei: ", kivalasztas(a))
