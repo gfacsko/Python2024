@@ -247,6 +247,22 @@ class NegyesVektor:
 
         return (NegyesVektor(self._x/v,self._y/v,self._z/v,self._w/v))
 
+    def  __mod__(self, v):
+        #if (isinstance(v,NegyesVektor)):
+        #    return ("Vektorokat nem lehet elosztani egymással.")
+
+#1 23  32
+#2 31  13
+#3 12  21
+        return (NegyesVektor(self._y*v._z-self._z*v._y,
+                             self._z*v._x-self._x*v._z,
+                             self._x*v._y-self._y*v._x,
+                             0))
+
+
+
+
+
     def __eq__(self,v):
         return (self._x == v.getX() & self._y == v.getY() & self._z == v.getZ() & self._w == v.getW())
 
@@ -297,12 +313,13 @@ class NegyesVektor:
 #amalia=Doktorandusz()
 #amalia.kiir()
 
-v1=NegyesVektor(1,1,1,1)
-v2=NegyesVektor(2,2,2,2)
+v1=NegyesVektor(2,0,0,0)
+v2=NegyesVektor(0,3,0,0)
 
 print("Az első négyesvektor:", v1)
 print("A második negyesvektor: ", v2)
 
+'''
 print(isinstance(v1, NegyesVektor))
 print(isinstance(v1, Hallgato))
 print(isinstance(v1.getX(),float))
@@ -313,6 +330,7 @@ print("Egy négyesvektor és egy skalár különbsége: ", v1-1)
 print("Egy négyesvektor és egy skalár szorzata: ", v1*7)
 print("Egy négyesvektor és egy skalár hányadosa: ", v2/2)
 print("Két vektor hányadosa:", v1/v2)
+'''
 
 '''
 print("A két négyesvektor különbsége:", v1-v2)
@@ -333,3 +351,6 @@ print("v1=>v2: ", v1>=v2)
 print("v2=>v2: ", v2>=v2)
 '''
 
+#print('Két négyesvektor összege: ', v1+v2)
+print('Két négyesvektor skalári szorzata: ',v1*v2)
+print('Két négyesvektor vektoriális szorzata: ',v1%v2)
