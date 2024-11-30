@@ -7,6 +7,8 @@
 #
 import tkinter as tk
 
+# ------------------------------------------------------------------------------------------------------
+
 # Az Exit gomb lenyomását kezelő függvény
 def handle_click_exit(event):
     print("Az Exit gombot lenyomták.")
@@ -15,67 +17,162 @@ def handle_click_exit(event):
 # Az = gomb lenyomását kezelő függvény
 def handle_click_egyen(event):
     print("A = gombot lenyomták.")
-    greeting.configure(text="=")
+    #greeting.configure(text="=")
+    # Elvégzi a műveletet
+    # Lekéri a vágólap tartalmát
+    cb = greeting.clipboard_get()
+    # Ha összeadás van benne
+    if (cb.find('+') > 0):
+        strSzam = cb.split('+')
+        print(strSzam)
+        result = int(strSzam[0]) + int(strSzam[1])
+
+    # Ha szorzás van benne
+    if (cb.find('*') > 0):
+        strSzam = cb.split('*')
+        print(strSzam)
+        result = int(strSzam[0]) * int(strSzam[1])
+
+    # Stringé alakítjuk az eredmény
+    strResult = str(result)
+    # A konzolra kiírjuk a művelet eredményét
+
+    print("A művelet eredménye: " + strResult)
+    # Kiírjuk az eredményt
+    greeting.configure(text=strResult)
+
+    # Töröljük a vágólapot
+    greeting.clipboard_clear()
+    # Hozzáadunk valamit, hogy legyen értéke
+    greeting.clipboard_append("")
 
 # Az + gomb lenyomását kezelő függvény
 def handle_click_add(event):
     print("A + gombot lenyomták.")
-    greeting.configure(text="+")
+    #greeting.configure(text="+")
+    greeting.clipboard_append("+")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
+
 
 # A * gomb lenyomását kezelő függvény
 def handle_click_multi(event):
     print("A * gombot lenyomták.")
-    greeting.configure(text="*")
+    #greeting.configure(text="*")
+    greeting.clipboard_append("*")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
 
 # Az 1 gomb lenyomását kezelő függvény
 def handle_click_egy(event):
     print("Az 1 gombot lenyomták.")
-    greeting.configure(text="1")
+    #greeting.configure(text="1")
+    greeting.clipboard_append("1")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
 
 # A 2 gomb lenyomását kezelő függvény
 def handle_click_ketto(event):
     print("A 2 gombot lenyomták.")
-    greeting.configure(text="2")
+    #greeting.configure(text="2")
+    greeting.clipboard_append("2")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
 
 # Az 3 gomb lenyomását kezelő függvény
 def handle_click_harom(event):
     print("A 3 gombot lenyomták.")
-    greeting.configure(text="3")
+    #greeting.configure(text="3")
+    greeting.clipboard_append("3")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
 
 # A 4 gomb lenyomását kezelő függvény
 def handle_click_negy(event):
     print("A 4 gombot lenyomták.")
-    greeting.configure(text="4")
+    #greeting.configure(text="4")
+    greeting.clipboard_append("4")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
 
 # Az 5 gomb lenyomását kezelő függvény
 def handle_click_ot(event):
     print("Az 5 gombot lenyomták.")
-    greeting.configure(text="5")
+    #greeting.configure(text="5")
+    greeting.clipboard_append("5")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
 
 # A 6 gomb lenyomását kezelő függvény
 def handle_click_hat(event):
     print("A 6 gombot lenyomták.")
-    greeting.configure(text="6")
+    #greeting.configure(text="6")
+    greeting.clipboard_append("6")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
 
 # Az 7 gomb lenyomását kezelő függvény
 def handle_click_het(event):
     print("A 7 gombot lenyomták.")
-    greeting.configure(text="7")
+    #greeting.configure(text="7")
+    greeting.clipboard_append("7")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
 
 # A 8 gomb lenyomását kezelő függvény
 def handle_click_nyolc(event):
     print("A 8 gombot lenyomták.")
-    greeting.configure(text="8")
+    #greeting.configure(text="8")
+    greeting.clipboard_append("8")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
 
 # A 9 gomb lenyomását kezelő függvény
 def handle_click_kilenc(event):
     print("A 9 gombot lenyomták.")
-    greeting.configure(text="9")
+    #greeting.configure(text="9")
+    greeting.clipboard_append("9")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
 
 # A 0 gomb lenyomását kezelő függvény
 def handle_click_nulla(event):
     print("A 0 gombot lenyomták.")
-    greeting.configure(text="0")
+    #greeting.configure(text="0")
+    greeting.clipboard_append("0")
+    # Clip Board = vágólap
+    cb = greeting.clipboard_get()
+    print(cb)
+    greeting.configure(text=cb)
+
+# Az ablak átméretezését kezelő függvény
+#def handle_resize(event):
+#    print("Átméretezték az ablakot.")
+#    greeting.configure(text="Átméretezés")
+
+# A program kezdete -----------------------------------------------------------------------------------
 
 # Az ablak szélessége és magassága
 width = 400
@@ -99,18 +196,25 @@ window.geometry('%dx%d+%d+%d' % (width, height, winX, winY))
 window.title("Első ablakos alkalmazás: számológép")
 # Fehér háttér
 window.configure(bg="white")
+# Az ablak átméretezése
+#window.bind("<Configure>",handle_resize)
 
 # Ezt már nem használjuk
 #window.geometry("800x600")
 
 # Kirak egy címkét (szöveget) az ablakba
-greeting = tk.Label(text="Első GUI-m")
+#greeting = tk.Label(text="Első GUI-m")
+greeting = tk.Label(text="0")
 # Fehér háttér, fekete szöveg
 greeting.configure(fg="black",bg="white")
 # Ez rakja ki az ablakba a szöveget
 greeting.pack()
 # A gomb helyzete
 greeting.place(x=100,y=50)
+# A számot a vágólapon tároljuk el. Először töröljük a vágólapot
+greeting.clipboard_clear()
+# Hozzáadunk valamit, hogy legyen értéke
+greeting.clipboard_append("")
 
 # Hozzáadja az + gombot
 addGomb = tk.Button(text="+")
