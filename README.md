@@ -1,5 +1,5 @@
 # Python2024
-Segédanyagok a PTE TTK-n a 2024/2025-ös év 1. félévben tartott "Elemi programozás" laborgyakorlathoz.
+Segédanyagok a PTE TTK-n a 2024/2025-ös év 1. félévben tartott "Elemi programozás" laborgyakorlathoz.  A programok "Forraskodok", az előadés diái a "Prezentaciok" branchben vannak. 
  
 Youtube.com csatorna:
  
